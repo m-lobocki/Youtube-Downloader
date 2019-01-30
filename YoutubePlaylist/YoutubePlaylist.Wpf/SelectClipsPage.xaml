@@ -1,0 +1,75 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    x:Class="YoutubePlaylist.Wpf.SelectClipsPage"
+    xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+
+    <Grid>
+        <TextBlock
+            x:Name="headerText"
+            Background="{DynamicResource BackgroundSelected}"
+            Text="2. Choose {0} to save"
+            FontSize="28"
+            FontFamily="Segoe UI Light"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Padding="10,8,5,5" />
+        <Button
+            x:Name="checkAllButton"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,65,0,0"
+            Width="28"
+            Height="28"
+            ToolTip="Check all"
+            Click="checkAllButton_Click">
+            <icons:PackIconModern
+                Kind="Checkmark" />
+        </Button>
+        <Button
+            x:Name="uncheckAllButton"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="28"
+            Height="28"
+            Margin="43,65,0,0"
+            ToolTip="Uncheck all"
+            Click="uncheckAllButton_Click">
+            <icons:PackIconModern
+                Kind="CheckmarkCross" />
+        </Button>
+        <ListBox
+            x:Name="videoListBox"
+            Margin="5,98,10,57"
+            SelectionChanged="videoListBox_OnSelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Margin="0,5">
+                        <CheckBox
+                            IsChecked="{Binding Path=IsChecked}"/>
+                        <TextBlock
+                            Text="{Binding}"
+                            FontSize="14" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button
+            x:Name="nextButton"
+            IsDefault="True"
+            Content="Next"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Width="145"
+            Height="32"
+            Margin="10,0,0,10"
+            Click="nextButton_Click" />
+    </Grid>
+</UserControl>
