@@ -1,7 +1,5 @@
 # Screenshots
 
-Please, pay no attention to the dark button on window bar. It's not enabled in the release version.
-
 ### Step 1
 ![Step1](http://i.imgur.com/YxIKUp3.png)
 
